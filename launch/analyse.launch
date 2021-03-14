@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <arg name="config" default="default"/>
+    <node name="hopalyser_$(arg config)" pkg="hopalyser" type="analyse.py" output="screen">
+        <rosparam command="load" file="$(find hopalyser)/config/$(arg config).yaml"/>
+    </node>
+</launch>
